@@ -3,6 +3,7 @@ Reveal timestamp ~~misteries~~ readable datetime from the command-line.
 
 ## What It Does
 
+![](https://media.giphy.com/media/l1J3uNcYG5zUlafqU/giphy.gif)
 
 ```bash
 ts 1502056440
