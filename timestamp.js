@@ -3,9 +3,13 @@
 const program = require("commander"),
   moment = require("moment-timezone"),
   inquirer = require("inquirer"),
-  fs = require("fs");
+  fs = require("fs"),
+  path = require("path");
 
-const config = require("./config.json");
+let configPath = path.join(__dirname, "./config.json");
+let defaultConfigPath = path.join(__dirname, "./default.config.json");
+
+const config = require(configPath);
 
 program
   .version("0.0.1")
@@ -27,19 +31,19 @@ let inputTimestamp =
 
 if (program.defaultLang) {
   config.lang = program.defaultLang;
-  fs.writeFileSync("./config.json", JSON.stringify(config, null, 2));
+  fs.writeFileSync(configPath, JSON.stringify(config, null, 2));
   console.log(`default lang: ${config.lang}`);
 }
 
 if (program.defaultFormat) {
   config.format = program.defaultFormat;
-  fs.writeFileSync("./config.json", JSON.stringify(config, null, 2));
+  fs.writeFileSync(configPath, JSON.stringify(config, null, 2));
   console.log(`default format: ${config.format}`);
 }
 
 if (program.reset === true) {
-  let defaultConfig = require("./default.config.json");
-  fs.writeFileSync("./config.json", JSON.stringify(defaultConfig, null, 2));
+  let defaultConfig = require(defaultConfigPath);
+  fs.writeFileSync(configPath, JSON.stringify(defaultConfig, null, 2));
   console.log(`config reset: done!`);
 }
 
