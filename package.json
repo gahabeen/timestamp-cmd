@@ -1,9 +1,28 @@
 {
   "name": "timestamp-cmd",
   "version": "0.0.1",
-  "description": "Command-line date output from timestamp",
+  "description": "command-line date output from timestamp",
   "main": "timestamp.js",
-  "author": "",
+  "author": {
+    "name": "Gabin Desserprit",
+    "email": "gabin@datahunter.pro",
+    "url": "http://datahunter.pro"
+  },
+  "keywords": [
+    "timestamp",
+    "date",
+    "time",
+    "command",
+    "cli",
+    "cmd"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gahabeen/timestamp-cmd"
+  },
+  "bugs": {
+    "url": "https://github.com/gahabeen/timestamp-cmd/issues"
+  },
   "license": "ISC",
   "dependencies": {
     "commander": "^2.11.0",
