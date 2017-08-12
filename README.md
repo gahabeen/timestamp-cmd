@@ -79,4 +79,6 @@ ts --resetConfig
 - Settings and Default Settings management
 # ... 0.0.12
 - Minor fixes (proper save of format and better handling of format workflow)
+# ... 0.0.13
+- Remove unwanted dependency: Inquirer
 ```

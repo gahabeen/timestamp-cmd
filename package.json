@@ -1,6 +1,6 @@
 {
   "name": "timestamp-cmd",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "description": "command-line date output from timestamp",
   "main": "timestamp.js",
   "author": {
@@ -26,7 +26,6 @@
   "license": "ISC",
   "dependencies": {
     "commander": "^2.11.0",
-    "inquirer": "^3.2.1",
     "moment": "^2.18.1",
     "moment-timezone": "^0.5.13"
   },

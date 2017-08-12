@@ -2,7 +2,6 @@
 
 const program = require("commander"),
   moment = require("moment-timezone"),
-  inquirer = require("inquirer"),
   fs = require("fs"),
   path = require("path");
 
