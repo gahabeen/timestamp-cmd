@@ -76,5 +76,7 @@ ts --resetConfig
 ```bash
 # version 0.0.1
 - Handle any timestamp with -language- and -format- handling
-- Settings & Default Settings management
+- Settings and Default Settings management
+# ... 0.0.12
+- Minor fixes (proper save of format and better handling of format workflow)
 ```

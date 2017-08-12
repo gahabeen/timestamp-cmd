@@ -27,7 +27,7 @@ program
 let inputTimestamp =
     program.args.length > 0 ? program.args[0].slice(0, 10) : null,
   outputText = null,
-  format = program.format || "LLLL";
+  format = typeof program.format === "string" ? program.format : null;
 
 if (program.defaultLang) {
   config.lang = program.defaultLang;
@@ -41,7 +41,7 @@ if (program.defaultFormat) {
   console.log(`default format: ${config.format}`);
 }
 
-if (program.reset === true) {
+if (program.resetConfig === true) {
   let defaultConfig = require(defaultConfigPath);
   fs.writeFileSync(configPath, JSON.stringify(defaultConfig, null, 2));
   console.log(`config reset: done!`);
@@ -54,12 +54,15 @@ if (typeof program.lang === "string") {
 }
 
 if (inputTimestamp) {
-  try {
-    outputText = moment.unix(inputTimestamp).format(format);
-  } catch (error) {
-    console.error(
-      `The format ${format} doesn't exists.\nComplete errror:\n${error}`
-    );
+  if (format) {
+    try {
+      outputText = moment.unix(inputTimestamp).format(format);
+    } catch (error) {
+      console.error(
+        `The format ${format} doesn't exists.\nComplete errror:\n${error}`
+      );
+    }
+  } else {
     try {
       outputText = moment.unix(inputTimestamp).format(config.format);
     } catch (error) {
@@ -80,5 +83,5 @@ if (inputTimestamp) {
 if (outputText) {
   console.log(outputText);
 } else if (inputTimestamp) {
-  console.error("Something is missing, good luck to find what ;)");
+  console.error("Something is missing, did you provide a timestamp?");
 }

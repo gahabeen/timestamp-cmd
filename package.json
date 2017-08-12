@@ -1,6 +1,6 @@
 {
   "name": "timestamp-cmd",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "description": "command-line date output from timestamp",
   "main": "timestamp.js",
   "author": {
